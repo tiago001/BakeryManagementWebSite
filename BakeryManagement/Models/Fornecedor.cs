@@ -8,12 +8,19 @@ using System.Threading.Tasks;
 
 namespace WPFBakery.Models
 {
+    //Annotations ASP.NET Core
     [Table("Fornecedores")]
     class Fornecedor
     {
         [Key]
         public int Id { get; set; }
+
+        [Display(Name = "Nome do fornecedor:")]
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public string Nome { get; set; }
+
+        [Display(Name = "Produtos do fornecedor:")]
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public List<Produto> Produtos { get; set; }
     }
 }

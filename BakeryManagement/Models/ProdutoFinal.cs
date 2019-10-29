@@ -8,14 +8,29 @@ using System.Threading.Tasks;
 
 namespace WPFBakery.Models
 {
+    //Annotations ASP.NET Core
     [Table("ProdutosFinais")]
     class ProdutoFinal
     {
         [Key]
         public int Id { get; set; }
+
+        [Display(Name = "Nome da receita:")]
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public Receita Receita { get; set; }
-        public double Preco { get; set; }
-        public double Custo { get; set; }
+
+
+        [Required(ErrorMessage = "Campo obrigatório!")]
+        [Display(Name = "Preço do produto final:")]
+        public double? Preco { get; set; }
+
+
+        [Required(ErrorMessage = "Campo obrigatório!")]
+        [Display(Name = "Custo do produto final:")]
+        public double? Custo { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório!")]
+        [Display(Name = "Prazo de validade do produto:")]
         public DateTime PrazoValidade { get; set; }
     }
 }

@@ -8,14 +8,19 @@ using System.Threading.Tasks;
 
 namespace WPFBakery.Models
 {
+    //Annotations ASP.NET Core
     [Table("Categorias")]
     class Categoria
     {
         [Key]
         public int Id { get; set; }
-
+        
+        [Display(Name = "Nome da categoria:")]
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public string Nome { get; set; }
 
+        [Display(Name = "Tipo da categoria:")]
+        [Required(ErrorMessage = "Campo obrigatório!")]
         public string Tipo { get; set; }
     }
 }
