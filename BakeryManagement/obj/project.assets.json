@@ -12533,23 +12533,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\1808309\\.nuget\\packages\\": {},
+    "C:\\Users\\1821366\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\C#\\WebProject\\BakeryManagementWebSite\\BakeryManagement\\BakeryManagement.csproj",
+      "projectUniqueName": "C:\\Users\\1821366\\source\\repos\\BakeryManagement\\BakeryManagement\\BakeryManagement.csproj",
       "projectName": "BakeryManagement",
-      "projectPath": "E:\\C#\\WebProject\\BakeryManagementWebSite\\BakeryManagement\\BakeryManagement.csproj",
-      "packagesPath": "C:\\Users\\1808309\\.nuget\\packages\\",
-      "outputPath": "E:\\C#\\WebProject\\BakeryManagementWebSite\\BakeryManagement\\obj\\",
+      "projectPath": "C:\\Users\\1821366\\source\\repos\\BakeryManagement\\BakeryManagement\\BakeryManagement.csproj",
+      "packagesPath": "C:\\Users\\1821366\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\1821366\\source\\repos\\BakeryManagement\\BakeryManagement\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\1808309\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\1821366\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
