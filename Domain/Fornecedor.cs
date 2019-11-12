@@ -6,21 +6,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WPFBakery.Models
+namespace Domain
 {
     //Annotations ASP.NET Core
-    [Table("Categorias")]
-    class Categoria
+    [Table("Fornecedores")]
+    public class Fornecedor
     {
         [Key]
         public int Id { get; set; }
-        
-        [Display(Name = "Nome da categoria:")]
+
+        [Display(Name = "Nome do fornecedor:")]
         [Required(ErrorMessage = "Campo obrigatório!")]
         public string Nome { get; set; }
 
-        [Display(Name = "Tipo da categoria:")]
+        [Display(Name = "Produtos do fornecedor:")]
         [Required(ErrorMessage = "Campo obrigatório!")]
-        public string Tipo { get; set; }
+        public List<Produto> Produtos { get; set; }
     }
 }

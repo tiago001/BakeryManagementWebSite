@@ -1,0 +1,6 @@
+C:\Users\1821366\source\repos\BakeryManagement\Repository\bin\Debug\netcoreapp2.1\Repository.deps.json
+C:\Users\1821366\source\repos\BakeryManagement\Repository\bin\Debug\netcoreapp2.1\Repository.dll
+C:\Users\1821366\source\repos\BakeryManagement\Repository\obj\Debug\netcoreapp2.1\Repository.csprojAssemblyReference.cache
+C:\Users\1821366\source\repos\BakeryManagement\Repository\obj\Debug\netcoreapp2.1\Repository.csproj.CoreCompileInputs.cache
+C:\Users\1821366\source\repos\BakeryManagement\Repository\obj\Debug\netcoreapp2.1\Repository.AssemblyInfoInputs.cache
+C:\Users\1821366\source\repos\BakeryManagement\Repository\obj\Debug\netcoreapp2.1\Repository.AssemblyInfo.cs

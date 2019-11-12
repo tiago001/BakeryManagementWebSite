@@ -1,15 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Domain;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WPFBakery.Models;
 
-namespace WPFBakery.Models
+namespace Repository
 {
     //Herdar da classe DbContext
-    class Context : DbContext
+    public class Context : DbContext
     {
         //Nomear o banco de dados
         public Context(DbContextOptions<Context> options) : base(options)
