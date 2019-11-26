@@ -6,10 +6,18 @@ namespace Repository
 {
     interface IRepository<T>
     {
-        bool Cadastrar(T objeto);
+        bool Create(T objeto);
 
         T BuscarPorId(int id);
 
+        T BuscarPorNome(T objeto);
+
+        void Remover(int id);
+
+        void Editar(T objeto);
+
         List<T> ListarTodos();
+
+
     }
 }
