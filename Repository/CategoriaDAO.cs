@@ -20,17 +20,6 @@ namespace Repository
             return _context.Categorias.Find(id);
         }
 
-        public bool Cadastrar(Categoria objeto)
-        {
-            if(BuscarPorNome(objeto) == null)
-            {
-                _context.Categorias.Add(objeto);
-                _context.SaveChanges();
-                return true;
-            }
-            return false;
-        }
-
         public Categoria BuscarPorNome(Categoria c)
         {
             return _context.Categorias.FirstOrDefault(x => x.Nome.Equals(c.Nome));
@@ -39,6 +28,29 @@ namespace Repository
         public List<Categoria> ListarTodos()
         {
             return _context.Categorias.ToList();
+        }
+
+        public bool Create(Categoria objeto)
+        {
+            if (BuscarPorNome(objeto) == null)
+            {
+                _context.Categorias.Add(objeto);
+                _context.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
+        public void Remover(int id)
+        {
+            _context.Categorias.Remove(BuscarPorId(id));
+            _context.SaveChanges();
+        }
+
+        public void Editar(Categoria objeto)
+        {
+            _context.Categorias.Update(objeto);
+            _context.SaveChanges();
         }
     }
 }
