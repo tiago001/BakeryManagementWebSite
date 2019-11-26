@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WPFBakery.Models;
+using Repository;
 
-namespace BakeryManagement.Migrations
+namespace Repository.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20191029002148_CriarBanco")]
+    [Migration("20191125221156_CriarBanco")]
     partial class CriarBanco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,35 +21,38 @@ namespace BakeryManagement.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("WPFBakery.Models.Categoria", b =>
+            modelBuilder.Entity("Domain.Categoria", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Nome");
+                    b.Property<string>("Nome")
+                        .IsRequired();
 
-                    b.Property<string>("Tipo");
+                    b.Property<string>("Tipo")
+                        .IsRequired();
 
                     b.HasKey("Id");
 
                     b.ToTable("Categorias");
                 });
 
-            modelBuilder.Entity("WPFBakery.Models.Fornecedor", b =>
+            modelBuilder.Entity("Domain.Fornecedor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Nome");
+                    b.Property<string>("Nome")
+                        .IsRequired();
 
                     b.HasKey("Id");
 
                     b.ToTable("Fornecedores");
                 });
 
-            modelBuilder.Entity("WPFBakery.Models.Produto", b =>
+            modelBuilder.Entity("Domain.Produto", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -57,17 +60,21 @@ namespace BakeryManagement.Migrations
 
                     b.Property<int?>("FornecedorId");
 
-                    b.Property<string>("Nome");
+                    b.Property<string>("Nome")
+                        .IsRequired();
 
                     b.Property<DateTime>("PrazoValidade");
 
-                    b.Property<double>("Preco");
+                    b.Property<double?>("Preco")
+                        .IsRequired();
 
-                    b.Property<double>("Quantidade");
+                    b.Property<int?>("Quantidade")
+                        .IsRequired();
 
                     b.Property<int?>("ReceitaId");
 
-                    b.Property<string>("Unidade");
+                    b.Property<string>("Unidade")
+                        .IsRequired();
 
                     b.HasKey("Id");
 
@@ -78,19 +85,21 @@ namespace BakeryManagement.Migrations
                     b.ToTable("Produtos");
                 });
 
-            modelBuilder.Entity("WPFBakery.Models.ProdutoFinal", b =>
+            modelBuilder.Entity("Domain.ProdutoFinal", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<double>("Custo");
+                    b.Property<double?>("Custo")
+                        .IsRequired();
 
                     b.Property<DateTime>("PrazoValidade");
 
-                    b.Property<double>("Preco");
+                    b.Property<double?>("Preco")
+                        .IsRequired();
 
-                    b.Property<int?>("ReceitaId");
+                    b.Property<int>("ReceitaId");
 
                     b.HasKey("Id");
 
@@ -99,39 +108,43 @@ namespace BakeryManagement.Migrations
                     b.ToTable("ProdutosFinais");
                 });
 
-            modelBuilder.Entity("WPFBakery.Models.Receita", b =>
+            modelBuilder.Entity("Domain.Receita", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Nome");
+                    b.Property<string>("Nome")
+                        .IsRequired();
 
-                    b.Property<string>("Rendimento");
+                    b.Property<string>("Rendimento")
+                        .IsRequired();
 
-                    b.Property<int>("TempoDePreparo");
+                    b.Property<int?>("TempoDePreparo")
+                        .IsRequired();
 
                     b.HasKey("Id");
 
                     b.ToTable("Receitas");
                 });
 
-            modelBuilder.Entity("WPFBakery.Models.Produto", b =>
+            modelBuilder.Entity("Domain.Produto", b =>
                 {
-                    b.HasOne("WPFBakery.Models.Fornecedor")
+                    b.HasOne("Domain.Fornecedor")
                         .WithMany("Produtos")
                         .HasForeignKey("FornecedorId");
 
-                    b.HasOne("WPFBakery.Models.Receita")
+                    b.HasOne("Domain.Receita")
                         .WithMany("Ingredientes")
                         .HasForeignKey("ReceitaId");
                 });
 
-            modelBuilder.Entity("WPFBakery.Models.ProdutoFinal", b =>
+            modelBuilder.Entity("Domain.ProdutoFinal", b =>
                 {
-                    b.HasOne("WPFBakery.Models.Receita", "Receita")
+                    b.HasOne("Domain.Receita", "Receita")
                         .WithMany()
-                        .HasForeignKey("ReceitaId");
+                        .HasForeignKey("ReceitaId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

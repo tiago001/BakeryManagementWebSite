@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace BakeryManagement.Migrations
+namespace Repository.Migrations
 {
     public partial class CriarBanco : Migration
     {
@@ -14,8 +14,8 @@ namespace BakeryManagement.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: true),
-                    Tipo = table.Column<string>(nullable: true)
+                    Nome = table.Column<string>(nullable: false),
+                    Tipo = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -28,7 +28,7 @@ namespace BakeryManagement.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: true)
+                    Nome = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -41,8 +41,8 @@ namespace BakeryManagement.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: true),
-                    Rendimento = table.Column<string>(nullable: true),
+                    Nome = table.Column<string>(nullable: false),
+                    Rendimento = table.Column<string>(nullable: false),
                     TempoDePreparo = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -56,10 +56,10 @@ namespace BakeryManagement.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: true),
+                    Nome = table.Column<string>(nullable: false),
                     Preco = table.Column<double>(nullable: false),
-                    Quantidade = table.Column<double>(nullable: false),
-                    Unidade = table.Column<string>(nullable: true),
+                    Quantidade = table.Column<int>(nullable: false),
+                    Unidade = table.Column<string>(nullable: false),
                     PrazoValidade = table.Column<DateTime>(nullable: false),
                     FornecedorId = table.Column<int>(nullable: true),
                     ReceitaId = table.Column<int>(nullable: true)
@@ -87,7 +87,7 @@ namespace BakeryManagement.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ReceitaId = table.Column<int>(nullable: true),
+                    ReceitaId = table.Column<int>(nullable: false),
                     Preco = table.Column<double>(nullable: false),
                     Custo = table.Column<double>(nullable: false),
                     PrazoValidade = table.Column<DateTime>(nullable: false)
@@ -100,7 +100,7 @@ namespace BakeryManagement.Migrations
                         column: x => x.ReceitaId,
                         principalTable: "Receitas",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

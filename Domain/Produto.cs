@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain
+{ 
     //Annotations ASP.NET Core
     [Table("Produtos")]
     public class Produto

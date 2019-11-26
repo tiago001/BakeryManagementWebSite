@@ -31,6 +31,8 @@ namespace BakeryManagement
             services.AddDbContext<Context>(options => options.UseSqlServer
                 (Configuration.GetConnectionString("BakeryConnection")));
 
+            services.AddScoped<CategoriaDAO>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
