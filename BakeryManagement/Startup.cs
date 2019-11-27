@@ -35,6 +35,7 @@ namespace BakeryManagement
             services.AddScoped<FornecedorDAO>();
             services.AddScoped<ProdutoDAO>();
             services.AddScoped<ProdutoFinalDAO>();
+            services.AddScoped<ReceitaDAO>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
