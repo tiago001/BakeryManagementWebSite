@@ -32,6 +32,13 @@ namespace BakeryManagement
                 (Configuration.GetConnectionString("BakeryConnection")));
 
             services.AddScoped<CategoriaDAO>();
+<<<<<<< HEAD
+=======
+            services.AddScoped<FornecedorDAO>();
+            services.AddScoped<ProdutoDAO>();
+            services.AddScoped<ProdutoFinalDAO>();
+            services.AddScoped<ReceitaDAO>();
+>>>>>>> a7b8d2ec176f0ac39bbab5a76ff6ce99716bac37
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

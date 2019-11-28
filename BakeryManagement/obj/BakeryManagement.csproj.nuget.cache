@@ -1,5 +1,9 @@
 {
   "version": 1,
+<<<<<<< HEAD
   "dgSpecHash": "C14mEB82Ss2zhzZfLEmdOM+0Dg5SfoDjCpQCznn1+r6MYe3llISFgh5fyBl41X4C8aS3WiXALmG46CQc1mSY8A==",
+=======
+  "dgSpecHash": "vYjXadf+gHi5kwmxaEujz5E6wbaWjXjOw8UZ7A0A9hl0r99+/9LOFylWGm9LzQf/MDszvP049Yk+U/V6S5RMKw==",
+>>>>>>> a7b8d2ec176f0ac39bbab5a76ff6ce99716bac37
   "success": true
 }
